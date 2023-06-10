@@ -3,5 +3,10 @@ class TweetsController < ApplicationController
         @tweets= Tweet.all #Es @porque es una variable global, que yo pueda usar en otras paginas relacionadas a tweet, en el html
 
     end
+
+    def show
+        @tweet= Tweet.find params[:id]
+
+    end
     
 end
