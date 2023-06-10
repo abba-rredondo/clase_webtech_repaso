@@ -3,7 +3,8 @@
 class DeviseCreateUsers < ActiveRecord::Migration[7.0]
   def change
     create_table :users do |t|
-      t.string :first_name, null: false, default: ""
+      t.string :first_name, null: false, default: ""  #Esto de null:false le dice, oye no puede ser nulo el valor de esto, y con esto
+      #aunque estamos siendo redundantes (al asegurarlo en model/user y en la base de datos, osea la migracion), es necesario para no chingar la base de datos y recontra asegurarnos
       t.string :last_name, null: false, default: ""
       ## Database authenticatable
       t.string :email,              null: false, default: ""
