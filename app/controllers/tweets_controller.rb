@@ -32,15 +32,10 @@ class TweetsController < ApplicationController
 
     private #FUnciones privadas que estoy definiendo
     def tweet_params
-        params.require(:tweet).permit(:body) #Esto me dice, solo te acepto un body, lo que es IMPORTANTISIMO, debido a que si no, 
+        params.require(:tweet).permit(:body, :hashtags) #Esto me dice, solo te acepto un body, lo que es IMPORTANTISIMO, debido a que si no, 
         #pueden meterme otras cosas en el campo y hackearme porque pueden meter comandos
     end
-
-    # def destroy
-    #     tweet = Tweet.find params[:id] #Antes de eliminar un tweet necesito saber el usuario
-    #     tweet.destroy
-
-
-    # end
+ #si pongo debugger eso va a hacer que se me ejecute hasta esa linea los comandos, luego cuando pongo n, voy a la siguiente linea, sirve
+ #para debugear
     
 end

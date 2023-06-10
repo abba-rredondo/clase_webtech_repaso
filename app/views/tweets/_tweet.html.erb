@@ -7,6 +7,7 @@
     <blockquote class="blockquote mb-0">
       <p><%=tweet.body%></p> <!---con el nombre de mi modelo.atributo muestro el atributi que quiera---->
       <footer class="blockquote-footer"> <cite><%=tweet.creation_date%></cite></footer> <!---Usamos el metodo definidio en el modelo d etweet--->
+      <footer class="blockquote-footer"><%= tweet.list_hashtags %></footer>
      <% if index %>
         <%= link_to 'Ver tweet', tweet, class: 'btn btn-primary' %>
      <%  else %>
