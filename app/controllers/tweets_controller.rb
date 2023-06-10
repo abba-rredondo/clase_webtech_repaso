@@ -24,7 +24,13 @@ class TweetsController < ApplicationController
         end
     end
 
-    private
+    def destroy
+        tweet = Tweet.find params[:id]
+        tweet.destroy
+        redirect_to tweets_path, notice: 'Tweet eliminado con éxito'
+    end
+
+    private #FUnciones privadas que estoy definiendo
     def tweet_params
         params.require(:tweet).permit(:body) #Esto me dice, solo te acepto un body, lo que es IMPORTANTISIMO, debido a que si no, 
         #pueden meterme otras cosas en el campo y hackearme porque pueden meter comandos
