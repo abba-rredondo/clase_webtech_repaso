@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header"> <!---Las vistas solo se encargar de mostrar, no hace calculos, es decir, que el saber como mostrar el
+  nombre, como un fstring es algo que no debe estar en la vista, si no que en el modelo--->
+    <%= tweet.user.full_name%> <!---Y asi el que calcula es el usuario--->
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%=tweet.body%></p> <!---con el nombre de mi modelo.atributo muestro el atributi que quiera---->
+      <footer class="blockquote-footer"> <cite><%=tweet.creation_date%></cite></footer> <!---Usamos el metodo definidio en el modelo d etweet--->
+     <% if index %>
+        <%= link_to 'Ver tweet', tweet, class: 'btn btn-primary' %>
+     <%  else %>
+
+     <% end %>
+    
+      <% if show %>
+         <%= link_to 'Volver a tweets', tweets_path, class: 'btn btn-primary' %>
+        <%= button_to 'Eliminar tweet', @tweet,method: :delete, class: 'btn btn-danger mt-2' %>
+     <% else %>
+
+      <% end %>
+    </blockquote>
+  </div>
+</div>

@@ -21,7 +21,7 @@ Se supone que vamos a ver algo llamado git flow, que es una forma de git donde u
 
 2. Hacemos rails new: para crear la app.
     ~~~
-    $ rails new simple_twitter --database postgresql -j esbuild -css bootstrap
+    $ rails new simple_twitter --database postgresql -j esbuild --s bootstrap
     ~~~
     Corremos:
     ~~~
