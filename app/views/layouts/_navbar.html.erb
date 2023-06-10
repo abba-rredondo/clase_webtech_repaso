@@ -11,6 +11,12 @@
         <li class="nav-item">
            <%=link_to 'Home', root_path , class: 'nav-link active'%> 
         </li>
+        <% if user_signed_in? %> <!--- si estas logueado aparece este boton--->
+          <li class= "nav-item">
+            <%= button_to 'Log out', destroy_user_session_path, method: :delete, class:'btn btn-outline-danger' %>
+          </li>
+        <%end%>
+      </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
