@@ -1,0 +1,14 @@
+<div class="container">
+    <h1> Nuevo tweet </h1>
+    <%= form_with model: @tweet do |f| %> <!---Los forms se hacen para que
+    se pueda poner información en ellos, literal es 
+    como google form en donde tengo que definir que campos pongo--->
+        <div class="form-row">
+            <div class="form-group col-6">
+                <%= f.text_field :body, placeholder: 'Comparte tu estado', class: 'form-control' %>
+            </div>
+        </div>
+        
+        <%= f.submit 'Guardar', class: 'btn btn-primary mt-2' %>
+    <% end %>
+</div>
