@@ -81,7 +81,7 @@ Se supone que vamos a ver algo llamado git flow, que es una forma de git donde u
 esta va a ser mi vista principal. Y con eso tenemos lista nuestra vista del home de static_pages.
    
 8. Para el nav bar creamos en las views/layouts un _navbar.html.erb
-    Este va a ser mi partial, debido a que en este me voy a dedicar a hacer todo lo del navbar, ponerlo lindi y eso, (el navbar lo saqué de bootstrap 5.0), la cosa es que despues lo voy a unir en application.html.erb, el que es una plantilla de diseño principal en Ruby on Rails, es como la base de todo, es donde se pone el nombre de la pestañita, la navbar, y cosas como bases. Porque tu visual de la pagina principal va a estar en static_pages.
+    Este va a ser mi partial, debido a que en este me voy a dedicar a hacer todo lo del navbar, ponerlo lindi y eso, (el navbar lo saqué de bootstrap 5.0, **tengo que usar el de la version 5.0**), la cosa es que despues lo voy a unir en application.html.erb, el que es una plantilla de diseño principal en Ruby on Rails, es como la base de todo, es donde se pone el nombre de la pestañita, la navbar, y cosas como bases, el aplication es mi base. Porque tu visual de la pagina principal va a estar en static_pages.
     
 9. Entonces, en application.html.erb que esta en layouts hacemos un
 ~~~
@@ -90,10 +90,12 @@ esta va a ser mi vista principal. Y con eso tenemos lista nuestra vista del home
     <%= yield %>
   </body>
 ~~~
+Al yo decirle partial, va a buscar el archivo que tenga _ y por eso lo ponemos como navbar nomas. 
+Esto lo puedo hacer para cualquier elementos, porque puedo poner en un archivo de _ elementos que yo quiera en formato html.erb, ya sea con fines de orden u otra cosa, y luego en la pagina donde quiero que se muestre uso el render partial y con esto le voy a decir, toma lo de partial, y pegalo en este html.
 
 Porque eso significa, que tu vas a tener en el body de application, el navbar, es como "enlazarlo". 
 
-10. Ahora, vamos a nuestra url y vemos si todo funciona bien en nuestra pagina, en nuestro caso tuvimos un error con la navbar, de que no funcionaba el dropdown, para solucionar esto, se hizo como una reinstalación del bootstrap, ejecitando la siguiente linea de comandos:
+10. Ahora, vamos a nuestra url y vemos si todo funciona bien en nuestra pagina, en nuestro caso tuvimos un error con la navbar, de que no funcionaba el dropdown, **el dropdown es lo que nos señala si funciona o no el bootstrap, es mejor revisarlo altiro para no ir acumulando problemas** para solucionar esto, se hizo como una reinstalación del bootstrap, ejecitando la siguiente linea de comandos:
 
     ~~~
     bundle add cssbundling-rails
@@ -107,6 +109,5 @@ Porque eso significa, que tu vas a tener en el body de application, el navbar, e
 
     Esto basicamente es como que instala bootstrap para el css y en lo ultimos dos comandos, el yarn es para instalar paquetes y el yarn build y lo que hace es que te compila todo.
 
-
-
+11. Metamosle mano al navbar
 
